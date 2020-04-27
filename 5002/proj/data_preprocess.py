@@ -87,7 +87,7 @@ def preprocessing_train(interval=20):
 
 
 def preprocessing_test(interval=20):
-    travel_time = pd.read_csv('data/20min_avg_travel_time_test_phase1.csv')
+    travel_time = pd.read_csv('data/test_20min_avg_travel_time.csv')
     travel_time['avg_travel_time'] = travel_time['avg_travel_time'].astype('float')
     travel_time.index = travel_time['time_window'].map(lambda x: parse(x.split(',')[0][1:]))
     travel_time['week'] = travel_time.index.map(lambda x: x.weekday)
